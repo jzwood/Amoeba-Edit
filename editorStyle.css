@@ -1,0 +1,49 @@
+/*
+ *  Amoeba Edit Style sheet
+ *  Jake Wood
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+html{
+background-color:"white";
+font-family: 'Source Code Pro';
+overflow: scroll;
+}
+
+textarea.mytextboxclass {
+	background-color: transparent;
+	/*background-color:#3B3131;*/
+	/*background-color:#FFF0E0 or #F0F0E0*/
+	background-repeat:no-repeat;
+	background-position:center-top;
+	background-attachment:fixed;
+	margin-left: 8ch;
+	border-width:0;
+	font-family: 'Source Code Pro';
+	font-size:12pt;
+	
+	/*color:#d4d4d4;*/
+	color:#42D273;
+	/*color:#46BCDE;*/
+	/*color:#E57254;*/
+
+	outline:none;
+	resize:none;
+	left: 0; 
+    top: 0; 
+    right: 0;
+	width:100%;/*height coerced, *I mean specified in javascript~.*/
+	white-space: pre;
+	word-wrap: normal;
+	overflow: hidden;
+}
+
+.sketch-container{
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: -1;
+}
+
+
