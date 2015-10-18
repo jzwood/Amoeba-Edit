@@ -334,8 +334,6 @@ function mold(){
 	};
 }
 
-
-
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
