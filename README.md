@@ -8,7 +8,9 @@ calming, what were you doing again? It's ok, don't worry. When you are in the wo
 
 ### about this project + Easter eggs ###
 
-So **A is for Amoeba** has a few interesting features. A single day in **AiFA** lasts only 60 minutes so every hour on the hour the world transforms from light to dark or vise versa. Mold is always trying to conquer the peaceful land and prevent you from seeing what you're typing but luckily Amoebas are always hungry and eat this mold when they pass through it. In **AiFA** even the typography is alive and _mellifluous_-- it will change its color to match any color you type (unless you're into taupe). There are other interesting details that you can find if you look.
+So **A is for Amoeba** has a few interesting features. A single day in **AiFA** lasts only 60 minutes so every hour on the hour the world transforms from light to dark or vise versa. Mold is always trying to conquer the peaceful land and prevent you from seeing what you're typing but luckily Amoebas are always hungry and eat this mold when they pass through it. In **AiFA** even the typography is alive and _mellifluous_-- it will change its color to match any color you type (unless you're into taupe).
+
+Also, this might be hard to believe...but amoebas' metabolic state is directly proprtional to sonic input...so if you're noisy they'll move more.
 
 signing off with a cat face
 
