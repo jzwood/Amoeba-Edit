@@ -3,8 +3,11 @@
 is a fun, web-based, novelty, text editor that wants to help you write creatively _or whatever_;
 whether it's code, fiction, or a dream diary of our collective unconscious, I guarantee you won't
 be able to concentrate with the dreamy amoebas floating about your screen. Is it annoying, hypnotic,
-calming, what were you doing again? It's ok, don't worry. When you are in the world of the amoeba you never have to worry...would you like to visit the [World of Amoebas](jzwood.github.io/Amoeba-Edit)?
+calming, what were you doing again? It's ok, don't worry. When you are in the world of the amoeba you never have to worry...would you like to visit the [World of Amoebas][edit]?
 
+[![amoeba's swimming](amoeba.png)][edit]
+
+[edit]: jzwood.github.io/Amoeba-Edit
 
 ### about this project + Easter eggs ###
 
