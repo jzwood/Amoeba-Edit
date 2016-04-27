@@ -7,7 +7,7 @@ calming, what were you doing again? It's ok, don't worry. When you are in the wo
 
 [![amoeba's swimming](amoeba.png)][edit]
 
-[edit]: jzwood.github.io/Amoeba-Edit
+[edit]: http://jzwood.github.io/Amoeba-Edit/
 
 ### about this project + Easter eggs ###
 
