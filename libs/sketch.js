@@ -1,7 +1,7 @@
 /*	p5 experimenting with a distraction-filled text editor
- *	Jake Wood 9/15	
+ *	Jake Wood 9/15
  *
- */ 
+ */
 
 var allAmoebas, incr;
 var allMold;
@@ -11,9 +11,9 @@ var bgcolors;//handles the background color transition
 function setup(){
 	var sketch =  createCanvas(windowWidth, windowHeight)
   		.parent("sketch-container");
-	
-	mic = new p5.AudioIn();
-	mic.start();
+
+	// mic = new p5.AudioIn();//feature requires a server which is not available on github.io
+	// mic.start();
 
 	allAmoebas = new collection();//initialize collection of amoeba automata
 	incr = 1;//the default increment each amoeba moves forward each frame
@@ -28,8 +28,10 @@ function setup(){
 
 function draw() {
   	background(getBackground());
-	incr = 1 + Math.pow(1 * (10 * mic.getLevel()),2);
-	
+	// incr = 1 + Math.pow(1 * (10 * mic.getLevel()),2);
+	incr = 1;
+
+
   	//re-seeds mold iff it's all eaten
 	allMold.respawn();
   	if(frameCount % 100 === 0){//change mod back to 100
@@ -66,7 +68,7 @@ function getBackground_poc(){
 	}
 	//console.log(colorIndexLimit - colorindex);
 	return bgcolors[colorIndexLimit - colorindex];
-	
+
 };
 
 // Speed up calls to hasOwnProperty
@@ -126,9 +128,9 @@ function collection(){
 
 //returns distance between two entities on toroid
 function distTo(one, two){
-	var dx = Math.min( Math.abs(two.x - one.x) , width - Math.abs(two.x - one.x)  ); 
+	var dx = Math.min( Math.abs(two.x - one.x) , width - Math.abs(two.x - one.x)  );
 	var dy = Math.min( Math.abs(two.y - one.y) , height- (two.y - one.y) );
-	return Math.sqrt(dx*dx + dy*dy); 
+	return Math.sqrt(dx*dx + dy*dy);
 	//return Math.sqrt((am2.x - am1.x) * (am2.x - am1.x) + (am2.y - am1.y,2) * (am2.y - am1.y,2));
 }
 
@@ -235,7 +237,7 @@ function mold(){
 	this.cells = {'0,0':new spore(x,y)};
 	var step = 15;
 	var growthLimit = 700;//smaller?
-	
+
 	this.logSize = function(){
 		console.log(Object.keys(allMold.cells).length);
 	};
@@ -257,7 +259,7 @@ function mold(){
 		var xs = cellId[0], ys = cellId[1];
 		var xi = parseInt(xs), yi = parseInt(ys);
 
-		var surr = (this.cells[String(xi+1)+','+ys] !== undefined && 
+		var surr = (this.cells[String(xi+1)+','+ys] !== undefined &&
 			this.cells[xs+','+String(yi+1)] !== undefined &&
 			this.cells[String(xi-1)+','+ys] !== undefined &&
 			this.cells[xs+','+String(yi-1)] !== undefined);
@@ -288,18 +290,18 @@ function mold(){
 		//console.log(width + " " + height);
 		return Math.ceil(width/3 + height/2)%6;//pseudo random number on interval [0,2]
 	};
-	
+
 	//removes a cell from mold group
 	this.remove = function(cellId){
 		delete this.cells[cellId];//this form of delete IS important
 	};
-	
+
 	//if mold dies it respawns
 	this.respawn = function(){
 		if (isObjEmpty(this.cells)){
 			//first line is just an unnecesary precaution...deletes everything in cell
 			for (var prop in this.cells) { if (this.cells.hasOwnProperty(prop)) { delete this.cells[prop]; } }
-			x = randPos(width/2) + (3/8)*width;//if all the spores die, resets the 
+			x = randPos(width/2) + (3/8)*width;//if all the spores die, resets the
 			y = randPos(height);// (x,y) origin spawns a fresh seed spore
 			this.cells = {'0,0':new spore(x,y)};
 		}
@@ -316,10 +318,10 @@ function mold(){
 			//first determine if cell is eaten by an amoeba
 			var cellId = keys[id];
 			var cell = this.cells[cellId];
-			
+
 			for(var i=0, max=allAmoebas.entities.length; i<max; i++){
 				//iterate through amoeba. poor use of globals, I know (sigh).
-				if (distTo(cell, allAmoebas.entities[i]) < step){ 
+				if (distTo(cell, allAmoebas.entities[i]) < step){
 					this.remove(cellId);
 					break;
 				}
